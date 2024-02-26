@@ -13,9 +13,9 @@ services:
       - database
     tty: true
     environment:
-      MYSQL_DATABASE: $MYSQL_DATABASE
-      MYSQL_PASSWORD: $MYSQL_PASSWORD
-      MYSQL_USER: $MYSQL_USER
+      MYSQL_DATABASE: fullcycle-docker-challenge
+      MYSQL_PASSWORD: wjmehbukwp
+      MYSQL_USER: Subsidize8502
 
   server:
     build:
@@ -36,10 +36,10 @@ services:
       - main
     restart: always
     environment:
-      MYSQL_DATABASE: $MYSQL_DATABASE
-      MYSQL_PASSWORD: $MYSQL_PASSWORD
-      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
-      MYSQL_USER: $MYSQL_USER
+      MYSQL_DATABASE: fullcycle-docker-challenge
+      MYSQL_PASSWORD: wjmehbukwp
+      MYSQL_ROOT_PASSWORD: kxqcsltocb
+      MYSQL_USER: Subsidize8502
 
 networks:
   main:
