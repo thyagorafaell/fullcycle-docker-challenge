@@ -8,6 +8,11 @@ This code features a dockerized application built with Nginx, Node.js, and a MyS
 
 > :warning: As the challenge states that the only step to run the application should be `docker-compose up -d`, no _.env_ file was created. As the application runs only locally, the credentials were committed to satisfy the criteria and not add another step to build the application.
 
+## Starting the server
+
+- Clone this repository locally running `git clone git@github.com:thyagorafaell/fullcycle-docker-challenge.git`
+- In the directory of the cloned repository, run `docker-compose up -d` and wait for the message "Running on 9000" from the container **app**
+
 ## Introduction
 
 > From the original source, in pt-BR 🇧🇷
