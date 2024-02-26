@@ -4,14 +4,13 @@ var db = require('./database');
 
 const createPeopleTable = `
 	CREATE TABLE IF NOT EXISTS people (
-		id VARCHAR(36) PRIMARY_KEY NOT NULL,
+		id VARCHAR(36) PRIMARY KEY NOT NULL,
 		name VARCHAR(255) NOT NULL
 	);
 `;
 
 module.exports = () => {
-	db.query(createPeopleTable, (error, results) => {
-		console.log(error, results)
+	db.query(createPeopleTable, error => {
 		if (!error) {
 			db.query(`
 				INSERT INTO people (id, name)
@@ -27,6 +26,8 @@ module.exports = () => {
 				INSERT INTO people (id, name)
 				VALUES("${v4()}", "${randomName()}")
 			`);
+		} else {
+			console.error(error);
 		}
 	});
 };

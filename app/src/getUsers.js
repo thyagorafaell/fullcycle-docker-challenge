@@ -4,6 +4,7 @@ const getUserFromDataBase = () => {
 	return new Promise((resolve, reject) => {
 		db.query('SELECT * FROM PEOPLE', function(error, results) {
 			if (error) {
+				console.error(error);
 				reject(err);
 			}
 
