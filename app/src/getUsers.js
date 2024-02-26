@@ -2,10 +2,10 @@ var db = require('./database');
 
 const getUserFromDataBase = () => {
 	return new Promise((resolve, reject) => {
-		db.query('SELECT * FROM PEOPLE', function(error, results) {
+		db.query('SELECT * FROM people', function(error, results) {
 			if (error) {
 				console.error(error);
-				reject(err);
+				reject(error);
 			}
 
 			resolve(results);
@@ -17,7 +17,9 @@ module.exports = async() => {
 	let content = '';
 
 	try {
-		content = await getUserFromDataBase()
+		const people = await getUserFromDataBase();
+
+		content = people
 			.map(({ name }) => `<li>${name}</li>`)
 			.join('');
 	} catch(error) {
