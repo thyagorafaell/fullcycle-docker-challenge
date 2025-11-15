@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: ./app
-    entrypoint: dockerize -wait tcp://database:3306 -timeout 20s node index.js
+    entrypoint: dockerize -wait tcp://database:3306 -timeout 20s npx nodemon src/index.js
     image: thyagorafaell/app
     container_name: app
     networks:
@@ -12,6 +12,8 @@ services:
     depends_on:
       - database
     tty: true
+    volumes:
+      - ./app/src:/usr/src/app/src
     environment:
       MYSQL_DATABASE: fullcycle-docker-challenge
       MYSQL_PASSWORD: wjmehbukwp

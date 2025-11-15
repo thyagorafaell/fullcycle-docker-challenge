@@ -4,5 +4,8 @@
     "mysql2": "^3.9.1",
     "node-random-name": "^1.0.1",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
